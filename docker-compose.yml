@@ -1,0 +1,21 @@
+version: '3'
+services:
+    postgres:
+        container_name: postgres
+        image: postgres
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: kamaleon_ti
+        ports:
+            - 5432:5432
+        restart: always
+    kamaeon-ti-app:
+        container_name: desafio-kamaleon-ti
+        build: .
+        ports: 
+            - 8080:8080
+        links:
+            - postgres:postgreslink
+        depends_on: 
+            - postgres
