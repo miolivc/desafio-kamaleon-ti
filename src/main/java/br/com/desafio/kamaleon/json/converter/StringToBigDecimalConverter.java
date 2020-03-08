@@ -1,4 +1,4 @@
-package br.com.desafio.kamaleon.json.converter.bigDecimal;
+package br.com.desafio.kamaleon.json.converter;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
 
@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class StringToBigDecimalConverter extends StdConverter<String, BigDecimal> {

@@ -24,14 +24,13 @@ public class Funcionario {
     private Long id;
 
     @Pattern(
-            regexp = "[A-Z][a-z]+([ ][A-Z][a-z]+)*",
+            regexp = "[A-z]+([ ][A-z]+)*",
             message = "O nome do funcionário deve atender ao padrão (nome completo)"
     )
     @NotBlank(message = "O nome do funcionário não pode estar vazio")
     @JsonProperty(required = true)
     private String nome;
 
-//    TODO: Encontrar uma maneira de validar o campo  para permitir apenas valores com o pattern "^\\$?\\d{1,3}(\\.\\d{3})*,\\d{2}?$"
     @NotNull(message = "O salário do funcionário não pode ser nulo")
     @Positive(message = "O salário do funcionário não pode ter um valor negativo ou zero")
     @JsonProperty(required = true)
@@ -41,7 +40,7 @@ public class Funcionario {
     private BigDecimal salario;
 
     @NotNull(message = "A data de admissão não pode ser nula")
-    @FutureOrPresent(message = "A data de admissão não pode ser anterior ao dia atual")
+    @PastOrPresent(message = "A data de admissão não pode ser superior ao dia atual")
     @JsonProperty(required = true)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate admitidoEm;
