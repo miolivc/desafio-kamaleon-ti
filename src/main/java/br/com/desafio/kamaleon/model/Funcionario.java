@@ -26,7 +26,8 @@ public class Funcionario {
 
     @Pattern(
             regexp = "[A-z]+([ ][A-z]+)*",
-            message = "O nome do funcionário deve atender ao padrão (nome completo)"
+            message = "O nome do funcionário deve atender ao padrão," +
+                    " sendo pelo menos dois nomes sem conter caracteres especiais"
     )
     @NotBlank(message = "O nome do funcionário não pode estar vazio")
     @JsonProperty(required = true)

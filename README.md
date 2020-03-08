@@ -20,7 +20,8 @@ A entidade escolhida para a descrição do item 1 foi `Funcionario` e esta possu
 ```
 {
     "id": 1,
-    "nome": "Michelle Oliveira da Costa",
+    "nome": "Beatriz Aparecida Cristiane da Silva",
+    "cpf": "045.024.969-79",
     "salario": "2.456,78",
     "admitidoEm": "09/03/2020"
 }
@@ -35,9 +36,18 @@ Para a representação da data foi utilizado a `java.time.LocalDate` por tratar-
 
 ## Validação dos campos da Entidade:
 
+A entidade `Funcionario` possui em seus atributos as seguintes validações:
+
+* **id**: Atributo possui validação definida pelo Hibernate (JPA) por tratar-se da chave primária da entidade;
+* **nome**: Atributo possui validação do tipo ao menos duas Strings separadas por espaço (Nome Sobrenome), não permitindo caracteres especiais;
+* **cpf**: Atributo deve ser uma string no formato do CPF brasileiro formatado e válido, além de ser único. Ex.: 045.024.969-79
+* **salario**: Valor deve aceitar máscara de moeda brasileira, separador de milhares `.` e separador de decimais `,`. Este valor foi definido com uma precisão de até 10 digitos com 2 casas decimais. Ex.: 2.456,78
+* **admitidoEm**: Valor deve ser correspondente ao formato de data brasileiro `dd/MM/yyyy` e deve ser uma data passada ou a atual;
+<br>
+
 #### Referências
 
-* [Why You Should Never Use Float and Double for Monetary Calculations
+- [Why You Should Never Use Float and Double for Monetary Calculations
 ](https://dzone.com/articles/never-use-float-and-double-for-monetary-calculatio)
-* [Conheça a nova API de datas do Java 8 - Caelum](https://blog.caelum.com.br/conheca-a-nova-api-de-datas-do-java-8/)
+- [Conheça a nova API de datas do Java 8 - Caelum](https://blog.caelum.com.br/conheca-a-nova-api-de-datas-do-java-8/)
 
