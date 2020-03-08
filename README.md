@@ -26,10 +26,14 @@ A entidade escolhida para a descrição do item 1 foi `Funcionario` e esta possu
 }
 ```
 
-Para a entidade, o atributo do tipo flutuante foi utilizada a representação `java.math.BigDecimal` por tratar-se de uma representação que define cautelosamente a precisão dos valores, evitando eventuais problemas futuros.
+Na entidade, a representação de um atributo inteiro foi utilizada `java.lang.Long` por possuir uma faixa de valores abrangidos maior do que um tipo `int` primitivo ou o wrapper `java.lang.Integer`.
+
+Para o atributo do tipo flutuante foi utilizada a representação `java.math.BigDecimal` por tratar-se de uma representação que define cautelosamente a precisão dos valores, evitando eventuais problemas futuros.
 
 Para a representação da data foi utilizado a `java.time.LocalDate` por tratar-se de uma representação focada em humanos, levando em consideração diferenças culturais na interpretação de datas.
 <br>
+
+## Validação dos campos da Entidade:
 
 #### Referências
 

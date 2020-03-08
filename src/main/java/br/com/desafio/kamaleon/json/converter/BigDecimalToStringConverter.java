@@ -1,4 +1,4 @@
-package br.com.desafio.kamaleon.json.converter;
+package br.com.desafio.kamaleon.json.converter.bigDecimal;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
 
