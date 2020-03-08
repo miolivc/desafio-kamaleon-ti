@@ -35,7 +35,7 @@ public class Funcionario {
 
     @CPF
     @JsonProperty(required = true)
-    @Column(nullable = false, unique = true)
+    @Column(length = 14, nullable = false, unique = true)
     private String cpf;
 
     @NotNull(message = "O salário do funcionário não pode ser nulo")
