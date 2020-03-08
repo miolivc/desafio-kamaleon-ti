@@ -40,8 +40,8 @@ A entidade `Funcionario` possui em seus atributos as seguintes validações:
 
 * **id**: Atributo possui validação definida pelo Hibernate (JPA) por tratar-se da chave primária da entidade;
 * **nome**: Atributo possui validação do tipo ao menos duas Strings separadas por espaço (Nome Sobrenome), não permitindo caracteres especiais;
-* **cpf**: Atributo deve ser uma string no formato do CPF brasileiro formatado e válido, além de ser único. Ex.: 045.024.969-79
-* **salario**: Valor deve aceitar máscara de moeda brasileira, separador de milhares `.` e separador de decimais `,`. Este valor foi definido com uma precisão de até 10 digitos com 2 casas decimais. Ex.: 2.456,78
+* **cpf**: Atributo deve ser uma string no formato do CPF brasileiro formatado e válido, além de ser único.
+* **salario**: Valor deve aceitar máscara de moeda brasileira, separador de milhares `.` e separador de decimais `,`. Este valor foi definido com uma precisão de até 10 digitos com 2 casas decimais.
 * **admitidoEm**: Valor deve ser correspondente ao formato de data brasileiro `dd/MM/yyyy` e deve ser uma data passada ou a atual;
 <br>
 
