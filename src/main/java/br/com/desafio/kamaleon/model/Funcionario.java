@@ -17,7 +17,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-@SequenceGenerator(name = "funcionario_seq", sequenceName = "funcionario_seq")
+@SequenceGenerator(name = "funcionario_seq", sequenceName = "funcionario_seq", allocationSize = 1)
 public class Funcionario {
 
     @Id

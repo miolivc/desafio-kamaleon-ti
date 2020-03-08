@@ -9,5 +9,5 @@ CREATE TABLE funcionario (
     nome VARCHAR NOT NULL,
     salario NUMERIC(10, 2) NOT NULL,
     admitido_em DATE NOT NULL
-        CHECK (admitidoEm <= now())
+        CHECK (admitido_em <= now())
 );

@@ -70,15 +70,54 @@ CREATE TABLE funcionario (
     - realizar o download `.zip` ou clone deste repositório;
     - navegar até o diretório desta aplicação;
     - alterar o arquivo `application-local.properties` colocando os valores do datasource referente ao seu banco de dados postgresql;
-    - Executar no diretório da aplicação o seguinte comando: `gradle :bootRun -Dspring.profiles.active=local`.
+    - Executar no diretório da aplicação o seguinte comando:  
+        `gradle :bootRun -Dspring.profiles.active=local`.
 
     **Observação:** Necessário necessário possuir `java` e `gradle` configurados; Não é necessário executar o script de criação do *schema*.
 
 * **Docker Compose:**
     - realizar o download `.zip` ou clone deste repositório;
-    - Executar no diretório da aplicação o seguinte comando: `docker-compose up -d` ou `sudo docker-compose up -d`.
+    - Executar no diretório da aplicação o seguinte comando:  
+        `docker-compose up -d` ou `sudo docker-compose up -d`.
 
     **Observação:** Necessário necessário possuir `docker` e `docker-compose` instalados.
+
+## Endpoints da API:
+
+Os endpoints implementados são:
+
+* **GET /api/v1/funcionarios** - Responsável por mostrar todos os funcionários cadastrados. No caso de não houverem dados.
+
+* **GET /api/v1/funcionarios?nome={nomeSearch}** - Responsável por mostrar todos os funcionários cadastrados com nomes iniciados pelo atributo `nomeSearch`. Caso não encontre nenhum *match*, retorna a lista completa de funcionários. 
+
+* **GET /api/v1/funcionario/{id}** - Responsável por trazer o funcionário cadastrado com atributo `id` correspondente ao enviado na requisição.
+
+* **POST /api/v1/funcionario** - Responsável por salvar os dados de um funcionário. A requisição deve conter um JSON com os dados enviados por meio do RequestBody e retorna uma URI no header com a localização do recurso criado.
+
+    Modelo de JSON:
+   ```
+   {
+       "nome": "Caroline Joana Sebastiana Dias",
+       "cpf": "620.278.300-14",
+       "salario": "1.256,36",
+       "admitidoEm": "10/11/2017"
+   }
+   ```
+  
+* **PUT /api/v1/funcionario/{id}** - Responsável por alterar os dados de um funcionário, a requisição deve conter um JSON com os dados enviados por meio do RequestBody e um `id ` correspondente ao funcionário a ser atualizado. Retorna um JSON com os dados atualizados do funcionário.
+
+    Modelo de JSON:
+   ```
+   {
+       "nome": "Caroline Joana Sebastiana Dias",
+       "cpf": "620.278.300-14",
+       "salario": "1.256,36",
+       "admitidoEm": "10/11/2017"
+   }
+   ```    
+<br>
+
+* **DELETE /api/v1/funcionario/{id}** - Responsável por remover o funcionário cadastrado com atributo `id` correspondente ao enviado na requisição. Retorna um OK caso a remoção seja efetuada com sucesso.
 
 #### Referências
 
