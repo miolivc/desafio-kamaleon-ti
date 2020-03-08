@@ -45,6 +45,25 @@ A entidade `Funcionario` possui em seus atributos as seguintes validações:
 * **admitidoEm**: Valor deve ser correspondente ao formato de data brasileiro `dd/MM/yyyy` e deve ser uma data passada ou a atual;
 <br>
 
+## Banco de dados: 
+
+O *schema* do banco de dados encontra-se definido da seguinte maneira:
+
+```
+CREATE SEQUENCE funcionario_seq;
+
+CREATE TABLE funcionario (
+    id BIGINT 
+        DEFAULT nextval('funcionario_seq') 
+        PRIMARY KEY,
+    cpf VARCHAR(14) UNIQUE,
+    nome VARCHAR NOT NULL,
+    salario NUMERIC(10, 2) NOT NULL,
+    admitidoEm DATE NOT NULL 
+        CHECK (admitidoEm <= now())
+);
+```
+
 #### Referências
 
 - [Why You Should Never Use Float and Double for Monetary Calculations
