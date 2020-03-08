@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -30,6 +31,11 @@ public class Funcionario {
     @NotBlank(message = "O nome do funcionário não pode estar vazio")
     @JsonProperty(required = true)
     private String nome;
+
+    @CPF
+    @JsonProperty(required = true)
+    @Column(nullable = false, unique = true)
+    private String cpf;
 
     @NotNull(message = "O salário do funcionário não pode ser nulo")
     @Positive(message = "O salário do funcionário não pode ter um valor negativo ou zero")
