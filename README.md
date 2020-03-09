@@ -80,7 +80,7 @@ CREATE TABLE funcionario (
     - Executar no diretório da aplicação o seguinte comando:  
         `docker-compose up -d` ou `sudo docker-compose up -d`.
 
-    **Observação:** Necessário necessário possuir `docker` e `docker-compose` instalados.
+    **Observação:** Necessário possuir `docker` e `docker-compose` instalados.
 
 ## Endpoints da API:
 
