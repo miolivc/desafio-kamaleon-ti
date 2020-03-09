@@ -59,8 +59,8 @@ CREATE TABLE funcionario (
     cpf VARCHAR(14) UNIQUE,
     nome VARCHAR NOT NULL,
     salario NUMERIC(10, 2) NOT NULL,
-    admitidoEm DATE NOT NULL 
-        CHECK (admitidoEm <= now())
+    admitido_em DATE NOT NULL 
+        CHECK (admitido_em <= now())
 );
 ```
 
